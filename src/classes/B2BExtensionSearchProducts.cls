@@ -36,6 +36,13 @@ public without sharing class B2BExtensionSearchProducts extends ConnectApi.BaseE
             //fieldValue.value = productsByIds.get(commerceProductSummaryPage.products[i].id).Description; FIXME this throws the exception FATAL_ERROR|System.UnsupportedOperationException: Output properties may only be written in objects built for tests
             fieldsByNames.put('Description', fieldValue);
         }
+
+        ConnectApi.SearchCategory searchCategory = productSearchResults.categories;
+        //ConnectApi.SearchCategory childCategory = new ConnectApi.SearchCategory(); FIXME this throws the exception FATAL_ERROR|System.UnsupportedOperationException: ConnectApi.SearchCategory cannot be constructed directly outside of a test
+        ConnectApi.SearchCategory childCategory = (ConnectApi.SearchCategory) searchCategory.clone();
+        ConnectApi.ProductCategoryData childCategoryData = childCategory.category;
+        //childCategoryData.name = 'test'; FIXME this throws the exception FATAL_ERROR|System.UnsupportedOperationException: Output properties may only be written in objects built for tests
+        searchCategory.children.add(childCategory);
         return response;
     }
 }
