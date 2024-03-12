@@ -43,10 +43,6 @@ public without sharing class B2BExtensionSearchProducts extends ConnectApi.BaseE
         ConnectApi.ProductCategoryData childCategoryData = childCategory.category;
         //childCategoryData.name = 'test'; FIXME this throws the exception FATAL_ERROR|System.UnsupportedOperationException: Output properties may only be written in objects built for tests
         //searchCategory.children.add(childCategory); FIXME this throws the exception in the network section of the browser console [{"errorCode": "UNKNOWN_EXCEPTION","message": "An unexpected error occurred. Please include this ErrorId if you contact support: 430674140-41568 (-740188281)"}]
-        /*searchCategory.children.clear();
-        searchCategory.children.add((ConnectApi.SearchCategory) JSON.deserialize(JSON.serialize(new SearchCategoryDTO(new ProductCategoryDTO('1', '2', '3', '4'), Long.valueOf('5'))), ConnectApi.SearchCategory.class));*/
-        //Object commerceProductSearchResultsDTO = new CommerceProductSearchResultsDTO(productSearchResults.categories, productSearchResults.correlationId, productSearchResults.facets, productSearchResults.locale, productSearchResults.productsPage);
-        //return new ConnectApi.EndpointExtensionResponse(JSON.deserializeUntyped(JSON.serialize(commerceProductSearchResultsDTO)), productSearchResults.hashCode(), '1008');
         return response;
     }
 }
